@@ -36,7 +36,8 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] private float m_RevRangeBoundary = 1f;
         [SerializeField] private float m_SlipLimit;
         [SerializeField] private float m_BrakeTorque;
-
+        [SerializeField] GUIText kphDisplay;
+        [SerializeField] RotatableGuiItem speedometer;
         private Quaternion[] m_WheelMeshLocalRotations;
         private Vector3 m_Prevpos, m_Pos;
         private float m_SteerAngle;
@@ -55,6 +56,9 @@ namespace UnityStandardAssets.Vehicles.Car
         public float Revs { get; private set; }
         public float AccelInput { get; private set; }
 
+        void Update() {
+            speedometer.angle = (int)CurrentSpeed - 25;
+        }
         // Use this for initialization
         private void Start()
         {
