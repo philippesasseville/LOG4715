@@ -16,6 +16,10 @@ namespace UnityStandardAssets.Vehicles.Car
             m_Car = GetComponent<CarController>();
         }
 
+        void OnGUI()
+        {
+            GUI.Label(new Rect(10, 10, 150, 20), "Speed : " + (int)m_Car.CurrentSpeed + " MPH");
+        }
 
         private void FixedUpdate()
         {
