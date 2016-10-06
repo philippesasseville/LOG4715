@@ -60,7 +60,7 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             Vector3 getPixelPos = Camera.main.WorldToScreenPoint(m_Rigidbody.position);
             getPixelPos.y = Screen.height - getPixelPos.y;
-            if(Vector3.Distance(m_Rigidbody.transform.position, Camera.main.transform.position) < 100)
+            if(getPixelPos.z > 0)
                 GUI.Label(new Rect(getPixelPos.x, getPixelPos.y, 200f, 100f), name);
         }
 
