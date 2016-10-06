@@ -56,6 +56,14 @@ namespace UnityStandardAssets.Vehicles.Car
         public float Revs { get; private set; }
         public float AccelInput { get; private set; }
 
+        void OnGUI()
+        {
+            Vector3 getPixelPos = Camera.main.WorldToScreenPoint(m_Rigidbody.position);
+            getPixelPos.y = Screen.height - getPixelPos.y;
+            if(Vector3.Distance(m_Rigidbody.transform.position, Camera.main.transform.position) < 100)
+                GUI.Label(new Rect(getPixelPos.x, getPixelPos.y, 200f, 100f), name);
+        }
+
         void Update() {
             speedometer.angle = (int)CurrentSpeed * 1.1f - 25;
         }
