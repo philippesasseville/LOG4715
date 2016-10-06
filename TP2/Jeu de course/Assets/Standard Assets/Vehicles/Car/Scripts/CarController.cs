@@ -57,7 +57,7 @@ namespace UnityStandardAssets.Vehicles.Car
         public float AccelInput { get; private set; }
 
         void Update() {
-            speedometer.angle = (int)CurrentSpeed - 25;
+            speedometer.angle = (int)CurrentSpeed * 1.1f - 25;
         }
         // Use this for initialization
         private void Start()
