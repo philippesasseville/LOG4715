@@ -65,7 +65,8 @@ namespace UnityStandardAssets.Vehicles.Car
         }
 
         void Update() {
-            speedometer.angle = (int)CurrentSpeed * 1.1f - 25;
+            if(this.gameObject.name == "Joueur 1")
+                speedometer.angle = (int)CurrentSpeed * 1.1f - 25;
         }
         // Use this for initialization
         private void Start()
